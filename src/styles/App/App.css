@@ -1,0 +1,14 @@
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+section
+{
+    height: calc(100vh);
+    scroll-snap-align: center;
+    background-color: #0c0c1d;
+}
+a
+{
+    text-decoration: none;
+}

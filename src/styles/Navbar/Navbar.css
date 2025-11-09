@@ -1,0 +1,22 @@
+.Navbar
+{
+    position: fixed;
+    height: 100px;
+    width: 100%;
+    background-color:black;
+}
+.LinksContainer
+{
+    width: 1366px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.LinksContainer a 
+{
+    font-size: 30px;
+    color: orange;
+}
