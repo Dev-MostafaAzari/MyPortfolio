@@ -5,7 +5,8 @@ import "../../styles/Navbar/Navbar.css";
 interface Variants {
     navMotion : {
         initial : {},
-        animation : {}
+        onView : {},
+        onHover : {},
     }
 };
 
@@ -14,14 +15,21 @@ const NavVariants : Variants["navMotion"] ={
         y:-50,
         opacity:0,
     },
-    animation : {
+    onView : {
         y:0,
         opacity:1,
         transition:{
             duration:0.5,
             type : "spring",
         }
-    }
+    },
+    onHover : {
+        scale:1.2,
+        color : "blue",
+        transition:{
+            duration:0.5,
+        }
+    },
 };
 
 
@@ -29,12 +37,12 @@ const NavVariants : Variants["navMotion"] ={
 const Navbar = ()=>{
     return(
         <div className="Navbar">
-            <motion.div className="LinksContainer" variants={NavVariants} initial="initial" whileInView={"animation"}>
-                <a href="#">Home</a>
-                <a href="#">AboutMe</a>
-                <a href="#">MySkills</a>
-                <a href="#">Projects</a>
-                <a href="#">ContactMe</a>
+            <motion.div className="LinksContainer" variants={NavVariants} initial="initial" whileInView={"onView"}>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">Home</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">AboutMe</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">MySkills</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">Projects</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">ContactMe</motion.a>
             </motion.div>
         </div>
     )
