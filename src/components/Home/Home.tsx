@@ -13,7 +13,15 @@ interface MotionVariants {
     ScrollImg: {
         start: {},
         end: {},
-    }
+    },
+    TitleContainer:{
+        start:{},
+        end:{},
+    },
+    TitleText:{
+        start:{},
+        end:{},
+    },
 };
 
 const HomeContentVariants: MotionVariants["HomeContent"] = {
@@ -48,9 +56,44 @@ const ScrollVariants : MotionVariants["ScrollImg"]={
     },
 };
 
+const TitleContainerVariants : MotionVariants["TitleContainer"]={
+    start:{
+        opacity:1,
+    },
+    end:{
+        opacity:1,
+        transition:{
+            staggerChildren:0.07,
+            delayChildren:1*0.2,
+            duration:2,
+            repeat:Infinity,
+        }
+    }
+     
+};
+
+const TitleTextVariants : MotionVariants["TitleText"]={
+    start:{
+        opacity:0,
+        y:-5,
+    },
+    end:{
+        opacity:1,
+        y:0,
+        transition:{
+            repeat:Infinity,
+            repeatType:"mirror",
+            repeatDelay:3,
+        }
+    },
+    
+    
+};
+
 
 
 const Home = () => {
+    let TitleText:string = "Frontend Developer!";
     return (
         <div className="Home">
             <div className="HomeWrapper">
@@ -59,7 +102,7 @@ const Home = () => {
                         <img src={HomeLogo} className="MyLogo" />
                     </motion.div>
                     <motion.div className="HomeText" variants={HomeContentVariants}>
-                        <h1>Frontend Developer</h1>
+                        <motion.h1 variants={TitleContainerVariants}>{TitleText.split("").map((char,index)=>(<motion.span variants={TitleTextVariants} key={index}>{char}</motion.span>))}</motion.h1>
                         <hr />
                         <p>I am Mostafa Azari, I am 24 years old and I am currently a graduate student at West Tehran Azad University, majoring in software engineering.</p>
                     </motion.div>
