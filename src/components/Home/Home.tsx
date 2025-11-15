@@ -15,12 +15,16 @@ interface MotionVariants {
         end: {},
     },
     TitleContainer:{
-        start:{},
-        end:{},
+        TitleStart:{},
+        TitleEnd:{},
+        DiscStart:{},
+        DiscEnd:{},
     },
     TitleText:{
-        start:{},
-        end:{},
+        TitleStart:{},
+        TitleEnd:{},
+        DiscStart:{},
+        DiscEnd:{},
     },
 };
 
@@ -57,43 +61,61 @@ const ScrollVariants : MotionVariants["ScrollImg"]={
 };
 
 const TitleContainerVariants : MotionVariants["TitleContainer"]={
-    start:{
+    TitleStart:{
         opacity:1,
     },
-    end:{
+    TitleEnd:{
         opacity:1,
         transition:{
             staggerChildren:0.07,
             delayChildren:1*0.2,
             duration:2,
-            repeat:Infinity,
         }
-    }
+    },
+    DiscStart:{
+        opacity:1,
+    },
+    DiscEnd:{
+        opacity:1,
+        transition:{
+            staggerChildren:0.03,
+            delayChildren:1*0.1,
+            duration:1,
+        }
+    },
      
 };
 
 const TitleTextVariants : MotionVariants["TitleText"]={
-    start:{
+    TitleStart:{
         opacity:0,
         y:-5,
     },
-    end:{
+    TitleEnd:{
         opacity:1,
         y:0,
         transition:{
-            repeat:Infinity,
-            repeatType:"mirror",
-            repeatDelay:3,
+            duration:1,
         }
     },
-    
-    
+    DiscStart:{
+        opacity:0,
+        y:-5,
+    },
+    DiscEnd:{
+        opacity:1,
+        y:0,
+        transition:{
+            duration:1,
+        }
+    },
 };
 
 
 
 const Home = () => {
     let TitleText:string = "Frontend Developer!";
+    let PText:string = "I am Mostafa Azari, I am 24 years old and I am currently a graduate student at West Tehran Azad University, majoring in software engineering."
     return (
         <div className="Home">
             <div className="HomeWrapper">
@@ -102,9 +124,9 @@ const Home = () => {
                         <img src={HomeLogo} className="MyLogo" />
                     </motion.div>
                     <motion.div className="HomeText" variants={HomeContentVariants}>
-                        <motion.h1 variants={TitleContainerVariants}>{TitleText.split("").map((char,index)=>(<motion.span variants={TitleTextVariants} key={index}>{char}</motion.span>))}</motion.h1>
+                        <motion.h1 variants={TitleContainerVariants} initial="TitleStart" animate="TitleEnd">{TitleText.split("").map((char,index)=>(<motion.span variants={TitleTextVariants} key={index}>{char}</motion.span>))}</motion.h1>
                         <hr />
-                        <p>I am Mostafa Azari, I am 24 years old and I am currently a graduate student at West Tehran Azad University, majoring in software engineering.</p>
+                        <motion.p variants={TitleContainerVariants} initial="DiscStart" animate="DiscEnd">{PText.split("").map((char,index)=>(<motion.span variants={TitleTextVariants} key={index}>{char}</motion.span>))}</motion.p>
                     </motion.div>
                     <div className="ScrollDiv">
                         <motion.img src={ScrollImg} variants={ScrollVariants} initial="start" animate="end" />

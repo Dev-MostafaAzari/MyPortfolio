@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <section id="home"><Home/></section>
+      <section id="Home"><Home/></section>
       <section id="AboutMe">AboutMe</section>
       <section id="MeSkills">MeSkills</section>
       <section id="Projects">Projects</section>

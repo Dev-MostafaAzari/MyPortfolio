@@ -38,11 +38,11 @@ const Navbar = ()=>{
     return(
         <div className="Navbar">
             <motion.div className="LinksContainer" variants={NavVariants} initial="initial" whileInView={"onView"}>
-                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">Home</motion.a>
-                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">AboutMe</motion.a>
-                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">MySkills</motion.a>
-                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">Projects</motion.a>
-                <motion.a variants={NavVariants} whileHover={"onHover"} href="#">ContactMe</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#Home">Home</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#AboutMe">AboutMe</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#MeSkills">MySkills</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#Projects">Projects</motion.a>
+                <motion.a variants={NavVariants} whileHover={"onHover"} href="#ContactMe">ContactMe</motion.a>
             </motion.div>
         </div>
     )
