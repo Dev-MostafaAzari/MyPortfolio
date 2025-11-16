@@ -3,7 +3,7 @@
     position: fixed;
     height: 100px;
     width: 100%;
-    background-color:black;
+    background-color:transparent;
     z-index: 998;
 }
 .LinksContainer
