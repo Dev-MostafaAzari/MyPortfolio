@@ -1,0 +1,61 @@
+.Home
+{
+    height:100%;
+    background: linear-gradient(180deg, #0c0c1d, #11113d);
+}
+.HomeWrapper
+{
+    width: 1366px;
+    height: 100%;
+    margin: auto;
+}
+.HomeContainer
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    position: relative;
+}
+.HomeImg
+{
+    flex:1;
+}
+.HomeText
+{
+    flex:1;
+}
+.HomeImg img 
+{
+    width: 500px;
+    border-radius: 50%;
+}
+.HomeText h1
+{
+    font-size: 45px;
+    text-align: center;
+    color:orange;
+}
+.HomeText hr 
+{
+    border:none;
+    border-top:1px solid lightgray;
+}
+.HomeText p 
+{
+    font-size: 30px;
+    font-weight: 600;
+    color:gray;
+}
+.ScrollDiv
+{
+    position: absolute;
+    bottom: 100px;
+}
+.ScrollDiv img 
+{
+    width: 50px;
+}

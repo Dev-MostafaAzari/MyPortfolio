@@ -4,6 +4,7 @@
     height: 100px;
     width: 100%;
     background-color:black;
+    z-index: 998;
 }
 .LinksContainer
 {
@@ -13,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 50px;
+    gap: 70px;
 }
 .LinksContainer a 
 {
